@@ -7,6 +7,6 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@master
-      - run: sudo rm -rf /usr/local /opt/ && mkdir -p /usr/local/{bin,share,lib64}
+      - run: sudo rm -rf /usr/local /opt/ && sudo mkdir -p /usr/local/{bin,share,lib64}
       - uses: lhotari/action-upterm@v1
       
