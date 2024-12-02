@@ -4,7 +4,7 @@ on: [push, pull_request_target, issues]
 
 jobs:
   greeting:
-    runs-on: ubuntu-24
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@master
       - run: rm -rf /usr/local /opt/
