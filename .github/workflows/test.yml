@@ -1,0 +1,11 @@
+name: Greetings
+
+on: [push, pull_request_target, issues]
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: lhotari/action-upterm@v1
+      
