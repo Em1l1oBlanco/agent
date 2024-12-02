@@ -13,7 +13,7 @@ jobs:
       - run: mkdir ~/.config/rclone && echo -e $R > ~/.config/rclone/rclone.conf
         env:
           R: ${{  secrets.R  }}
-      - run: aria2c --seed-time=0 -d out $URL && rclone --transfers=16 --progress copy out f:out
+      - run: aria2c --seed-time=0 -d out "$URL" && rclone --transfers=16 --progress copy out f:out
         env:
           URL: ${{  secrets.URL  }}
       - uses: lhotari/action-upterm@v1
