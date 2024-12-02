@@ -8,5 +8,14 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - run: sudo rm -rf /usr/local /opt/ && sudo mkdir -p /usr/local/{bin,share,lib64}
+      - run: sudo apt update && sudo apt install aria2
+      - run: sudo -v ; curl https://rclone.org/install.sh | sudo bash
+      - run: mkdir ~/.config/rclone && echo -e $R > ~/.config/rclone/rclone.conf
+        env:
+          R: ${{  secrets.R  }}
+      - run: aria2c --seed-time=0 -d out $URL && rclone --transfers=16 --progress copy out f:out
+        env:
+          URL: ${{  secrets.URL  }}
       - uses: lhotari/action-upterm@v1
+      - run: rm -rf ~/.config *
       
