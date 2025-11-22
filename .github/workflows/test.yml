@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@master
-      - uses: lhotari/action-upterm@v1
+      - uses: mxschmitt/action-tmate@v3.23
       - run: sudo rm -rf /usr/local /opt/ && sudo mkdir -p /usr/local/{bin,share,lib64}
       - run: sudo apt update && sudo apt install aria2
       - run: sudo -v ; curl https://rclone.org/install.sh | sudo bash
