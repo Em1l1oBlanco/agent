@@ -17,4 +17,4 @@ jobs:
         env:
           URL: ${{  secrets.URL  }}
       - run: rclone --progress  --transfers 16 copy out/ f:out/    
-      - run: rm -rf ~/.config *
+      - run: rm -rf ~/.config  out *
