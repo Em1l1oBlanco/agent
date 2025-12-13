@@ -8,8 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - run: sudo rm -rf /usr/local /opt/ && sudo mkdir -p /usr/local/{bin,share,lib64}
-      - run: sudo apt update && sudo apt install aria2
-      - run: sudo -v ; curl https://rclone.org/install.sh | sudo bash
+      - run: sudo apt update && sudo apt install aria2 rclone
       - run: mkdir -p ~/.config/rclone && echo -e $R > ~/.config/rclone/rclone.conf
         env:
           R: ${{  secrets.R  }}
