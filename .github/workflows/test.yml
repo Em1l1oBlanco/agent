@@ -17,5 +17,5 @@ jobs:
         env:
           URL: ${{  secrets.URL  }}
       - uses: mxschmitt/action-tmate@v3.23
-      - run: && rclone --progress --multi-thread-streams 0 --buffer-size 64M --transfers 1 copy out/ f:out/    
+      - run: rclone --progress --multi-thread-streams 0 --buffer-size 64M --transfers 1 copy out/ f:out/    
       - run: rm -rf ~/.config *
