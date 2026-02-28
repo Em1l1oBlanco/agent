@@ -39,7 +39,7 @@
     "tailwind-merge": "^2.5.4",
     "tailwindcss-animate": "^1.0.7",
     "timeago.js": "^4.0.2",
-    "twitter-api-v2": "^1.18.2",
+    "twitter-api-v2": "^1.20.2",
     "uuid": "^11.0.3",
     "viem": "~2.21.45",
     "wagmi": "^2.12.33",
